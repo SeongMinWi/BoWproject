@@ -14,7 +14,7 @@ Image classification using Pattern Recognition
 ### Environment
 1. Python 3.x
 2. numpy
-3. opencv-contrib-python 3.4.2.16
+3. opencv-contrib-python 3.4.2.16 (SIFT 알고리즘이 특허로 등록되어 있어 opencv 특정 버전만 사용 가능)
 4. sklearn
 5. scipy
 6. kmc2
