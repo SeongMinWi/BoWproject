@@ -8,11 +8,16 @@ Image classification using Pattern Recognition
 * [Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
 
 ### Dataset - Caltech 101
-* Link:http://www.vision.caltech.edu/Image_Datasets/Caltech101/
+* Link: http://www.vision.caltech.edu/Image_Datasets/Caltech101/
+101종류의 class, class당 영상 30장
 
-### Histogram
-
-
+### Environment
+1. Python 3.x
+2. numpy
+3. opencv-contrib-python 3.4.2.16
+4. sklearn
+5. scipy
+6. kmc2
 
 ### Result
 | Type | Level | features | Image size | SIFT step_size | Scaler | SVM Kernel | Accuracy|
