@@ -24,6 +24,9 @@ Image classification using Pattern Recognition
 
 
 ### Bag of Words
+
+![Alt text](https://t1.daumcdn.net/cfile/tistory/2171564C5302BF5F27)
+
 1. Extract SIFT descriptor
 ```
 sift = cv2.xfeatures2d.SIFT_create()
@@ -54,9 +57,12 @@ codebook = Kmeas.cluster_centers_
 ```
 4. Train classifier (Support Vector Machine)
 
-![Alt text](https://t1.daumcdn.net/cfile/tistory/2171564C5302BF5F27)
+
 
 ### Spatial Pyramind Matching
+
+![Alt text](https://t1.daumcdn.net/cfile/tistory/2407DA485302FE6009)
+
 + Pyramid Match Kernel
 ```
 def histogramIntersection(M, N):
@@ -105,7 +111,7 @@ def Fast_getImageFeaturesSPM2(L, img_des, kmeans, k):
     hist = np.array(h).ravel()
     return hist
 ```
-![Alt text](https://t1.daumcdn.net/cfile/tistory/2407DA485302FE6009)
+
 
 
 ### Result
