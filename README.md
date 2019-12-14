@@ -19,6 +19,16 @@ Image classification using Pattern Recognition
 5. scipy
 6. kmc2
 
+### Bag of Words
+1. Extract SIFT descriptor
+2. Generate Codebook (K-means clustering)
+3. Generate Histogram of codeword
+4. Train classifier (Support Vector Machine)
+
+### Spatial Pyramind Matching
+Bag of Words + Pyramid Matching
+![Alt text](https://t1.daumcdn.net/cfile/tistory/2407DA485302FE6009)
+
 ### Result
 | Type | Level | features | Image size | SIFT step_size | Scaler | SVM Kernel | Accuracy|
 |:----:|:-----:|:--------:|:----------:|:--------------:|:------:|:----------:|:-------:|
