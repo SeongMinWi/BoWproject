@@ -9,6 +9,7 @@ Image classification using Pattern Recognition
 
 ### Dataset - Caltech 101
 * Link: http://www.vision.caltech.edu/Image_Datasets/Caltech101/
+
 101종류의 class, class당 영상 30장
 
 ### Environment
