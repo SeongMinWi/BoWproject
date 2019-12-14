@@ -8,9 +8,8 @@ Image classification using Pattern Recognition
 * [Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
 
 ### Dataset - Caltech 101
-* Link: http://www.vision.caltech.edu/Image_Datasets/Caltech101/
-
 101종류의 class, class당 영상 30장
+* Link: http://www.vision.caltech.edu/Image_Datasets/Caltech101/
 
 ### Environment
 1. Python 3.x
