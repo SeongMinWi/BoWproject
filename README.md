@@ -9,7 +9,7 @@ Image classification using Pattern Recognition
 
 | Type | Level | features | Image size | SIFT step_size | Scaler | SVM Kernel | Accuracy|
 |:----:|:-----:|:--------:|:----------:|:--------------:|:------:|:----------:|:-------:|
-Single-level | 0 | 200 | 256x256 | 8 | standard | RBF | 0.40307 |
+Single-level | 0 | 200 | 256x256 | 8 | standard | RBF | 0.40130 |
 Pyramid | 2 | 200 | 256x256 | 8 | standard | RBF | 0.48877 |
 Pyramid | 2 | 200 | 256x256 | 8 | standard | Precomputed | 0.54669 |
 Pyramid | 2 | 400 | 256x256 | 8 | standard | Precomputed | 0.56737 |
