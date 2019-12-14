@@ -19,4 +19,5 @@ Pyramid | 2 | 1200 | 256x256 | 8 | robust+standard | Precomputed | 0.61406 |
 
 ### Reference
 https://github.com/TrungTVo/spatial-pyramid-matching-scene-recognition.git
+
 https://github.com/wihoho/Image-Recognition.git
