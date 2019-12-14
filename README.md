@@ -5,7 +5,7 @@
 Image classification using Pattern Recognition
 
 ### Base paper
-[Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
+* [Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
 
 ### Result
 | Type | Level | features | Image size | SIFT step_size | Scaler | SVM Kernel | Accuracy|
