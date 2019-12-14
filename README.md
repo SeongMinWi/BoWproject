@@ -30,17 +30,74 @@ sift = cv2.xfeatures2d.SIFT_create()
 kp = [cv2.KeyPoint(x,y,Step_size) for y in range(0, image_gray.shape[0], Step_size) for x in range(0, image_gray.shape[1],   Step_size)]
 keypoint, des = sift.compute(image_gray, kp)
 ```
-
 2. Generate Codebook (K-means clustering)
+```
+codebook_size = 800
+X = np.array(train_des)
+X = X.reshape(-1,128)
+
+seeding = kmc2.kmc2(X, codebook_size)
+Kmeas = MiniBatchKMeans(codebook_size, init=seeding).fit(X)
+
+codebook = Kmeas.cluster_centers_
+```
 3. Generate Histogram of codeword
+```
+a
+```
 4. Train classifier (Support Vector Machine)
 
 ![Alt text](https://t1.daumcdn.net/cfile/tistory/2171564C5302BF5F27)
 
 ### Spatial Pyramind Matching
 + Pyramid Match Kernel
-+ Spatial Matching Scheme 
+```
+def histogramIntersection(M, N):
+    m = M.shape[0]
+    n = N.shape[0]
+    result = np.zeros((m,n))
+    for i in range(m):
+        for j in range(n):
+            temp = np.sum(np.minimum(M[i], N[j]))
+            result[i][j] = temp
+    return result
 
+%time gramMatrix = histogramIntersection(train_histo3, train_histo3)
+
+%time predictMatrix = histogramIntersection(test_histo3, train_histo3)
+```
++ Spatial Matching Scheme 
+```
+def Fast_getImageFeaturesSPM2(L, img_des, kmeans, k):
+    w_img = 256
+    h_img = 256
+    Step_size = 8
+    W_des = int(w_img/Step_size)
+    H_des = int(h_img/Step_size)      
+    h = []
+
+    img_des = img_des.reshape(H_des,W_des,128)        
+
+    for l in range(L+1):
+        w_step = math.floor(W_des/(2**l))
+        h_step = math.floor(H_des/(2**l))
+        x, y = 0, 0
+        for i in range(1,2**l + 1):
+            x = 0
+            for j in range(1, 2**l + 1):        
+                #desc = img_des[y:y+h_step, x:x+w_step,:].reshape(-1,128)
+                desc = img_des[y:y+h_step, x:x+w_step,:].reshape(-1,128)                  
+                predict_vq = vq(desc,codebook)
+                #histo = np.bincount(predict_vq[0], minlength=k).reshape(1,-1).ravel()
+                histo = np.bincount(predict_vq[0], minlength=k).reshape(-1,1)
+                weight = 2**(l-L)
+                h.append(weight*histo)
+                x = x + w_step
+            y = y + h_step
+            
+    hist = np.array(h).ravel()
+    return hist
+```
 ![Alt text](https://t1.daumcdn.net/cfile/tistory/2407DA485302FE6009)
 
 
