@@ -43,7 +43,14 @@ codebook = Kmeas.cluster_centers_
 ```
 3. Generate Histogram of codeword
 ```
-a
+codebook_size = 200
+X = np.array(train_des)
+X = X.reshape(-1,128)
+
+seeding = kmc2.kmc2(X, codebook_size)
+Kmeas = MiniBatchKMeans(codebook_size, init=seeding).fit(X)
+
+codebook = Kmeas.cluster_centers_
 ```
 4. Train classifier (Support Vector Machine)
 
