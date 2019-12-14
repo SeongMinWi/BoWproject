@@ -25,6 +25,12 @@ Image classification using Pattern Recognition
 
 ### Bag of Words
 1. Extract SIFT descriptor
+```
+    sift = cv2.xfeatures2d.SIFT_create()
+    kp = [cv2.KeyPoint(x,y,Step_size) for y in range(0, image_gray.shape[0], Step_size) for x in range(0, image_gray.shape[1],    Step_size)]
+    keypoint, des = sift.compute(image_gray, kp)
+```
+
 2. Generate Codebook (K-means clustering)
 3. Generate Histogram of codeword
 4. Train classifier (Support Vector Machine)
