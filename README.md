@@ -29,10 +29,12 @@ Image classification using Pattern Recognition
 3. Generate Histogram of codeword
 4. Train classifier (Support Vector Machine)
 
+![Alt text](https://t1.daumcdn.net/cfile/tistory/2171564C5302BF5F27)
 
 ### Spatial Pyramind Matching
 1. Spatial Matching Scheme
 2. Pyramid Match Kernel
+
 ![Alt text](https://t1.daumcdn.net/cfile/tistory/2407DA485302FE6009)
 
 
