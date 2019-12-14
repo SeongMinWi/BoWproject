@@ -7,8 +7,8 @@ Base paper:
 [Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
 
 | Type | Level | features |
-|--------|--------|--------|
-| Single-level | 0 | 200 |
+-------|-------|----------|
+Single-level|0|200|
 
 ### Reference
 https://github.com/TrungTVo/spatial-pyramid-matching-scene-recognition.git
