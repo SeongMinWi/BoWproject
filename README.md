@@ -10,6 +10,6 @@ Base paper:
 |:-------- | :--------: | --------: |
 | Left | Center | Right |
 
-#Reference
+### Reference
 (https://github.com/TrungTVo/spatial-pyramid-matching-scene-recognition.git)
 (https://github.com/wihoho/Image-Recognition.git)
