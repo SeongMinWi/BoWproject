@@ -34,17 +34,7 @@ kp = [cv2.KeyPoint(x,y,Step_size) for y in range(0, image_gray.shape[0], Step_si
 keypoint, des = sift.compute(image_gray, kp)
 ```
 2. Generate Codebook (K-means clustering)
-```
-codebook_size = 800
-X = np.array(train_des)
-X = X.reshape(-1,128)
 
-seeding = kmc2.kmc2(X, codebook_size)
-Kmeas = MiniBatchKMeans(codebook_size, init=seeding).fit(X)
-
-codebook = Kmeas.cluster_centers_
-```
-3. Generate Histogram of codeword
 ```
 codebook_size = 200
 X = np.array(train_des)
@@ -54,6 +44,19 @@ seeding = kmc2.kmc2(X, codebook_size)
 Kmeas = MiniBatchKMeans(codebook_size, init=seeding).fit(X)
 
 codebook = Kmeas.cluster_centers_
+```
+
+3. Generate Histogram of codeword
+
+```
+def formHistogram(x, codebook, k):
+    hist = []
+    for i in range(len(x)):
+        data = copy.deepcopy(x[i])
+        predict_vq = vq(data,codebook)
+        hist.append(np.bincount(predict_vq[0], minlength=k).reshape(1,-1).ravel())
+        
+    return np.array(hist)
 ```
 4. Train classifier (Support Vector Machine)
 
